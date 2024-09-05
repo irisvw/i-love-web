@@ -79,6 +79,7 @@ article > header {
 
 a:link {
   text-decoration: none;
+  color: black;
 }
 
 a:hover {
@@ -104,8 +105,9 @@ dd {
   margin-left: 1em;
 }
 
-/* SCROLLBAR
+/* SCROLLBAR */
 
+/*
 article::-webkit-scrollbar {
   background-color: #ffffff00;
   width: 16px;
