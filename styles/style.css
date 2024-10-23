@@ -50,7 +50,6 @@ h2 {
 }
 
 section {
-  background-image: repeating-linear-gradient(white, white 29px, #00b0d7 1px 30px);
   min-height: 500px;
   max-height: 700px;
   width: clamp(300px, 90vw, 900px);
@@ -60,7 +59,6 @@ section {
   font-family: handwriting, sans-serif;
   line-height: 30px;
   font-size: 22px;
-  padding: 3px 1rem 1rem 3rem;
 
   li {
     list-style-type: "♥ "
@@ -71,4 +69,10 @@ section {
   h3 {
     margin-top: 30px;
   }
+}
+
+.container {
+  background-image: repeating-linear-gradient(white, white calc(1lh - 1px), #00b0d7 0 30px);
+  padding: 3px 1rem 1rem 3rem;
+  min-height: 500px;
 }
