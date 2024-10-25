@@ -82,7 +82,7 @@ section {
   min-height: 500px;
 }
 
-img {
+section > img {
   max-height: 15rem;
   float: right;
 }
