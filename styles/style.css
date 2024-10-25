@@ -64,15 +64,29 @@ section {
     list-style-type: "♥ "
   }
 
-
-
   h3 {
     margin-top: 30px;
   }
+
+
+}
+
+.visible-link {
+  color: rgb(21, 82, 214);
+  text-decoration: underline;
 }
 
 .container {
   background-image: repeating-linear-gradient(white, white calc(1lh - 1px), #00b0d7 0 30px);
   padding: 3px 1rem 1rem 3rem;
   min-height: 500px;
+}
+
+img {
+  max-height: 15rem;
+  float: right;
+}
+
+code {
+  font-size: 18px;
 }
