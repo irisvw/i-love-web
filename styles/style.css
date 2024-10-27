@@ -90,3 +90,17 @@ section > img {
 code {
   font-size: 18px;
 }
+
+.gradient {
+  min-height: 100px;
+  max-width: 200px;
+  margin: 1lh;
+  background: linear-gradient(
+    red 16%,
+    orange 16% 32%,
+    yellow 32% 48%,
+    green 48% 64%,
+    blue 64% 80%,
+    purple 80%
+  );
+}
