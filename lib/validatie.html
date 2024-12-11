@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    fieldset:has(:user-invalid) {
+      background: #faa;
+    }
+  </style>
+</head>
+
+<body>
+  <form>
+    <fieldset>
+      <legend>Zoeken</legend>
+      <input title="Zoek!" required>
+      <button type="submit">Zoek!</button>
+    </fieldset>
+  </form>
+
+  <form class="form">
+    <fieldset>
+      <legend>Selecteer een optie</legend>
+      <label><input type="radio" name="option"> Optie 1</label>
+      <label><input type="radio" name="option"> Optie 2</label>
+      <label><input type="radio" name="option"> Optie 3</label>
+      <input type="submit" value="Verstuur">
+    </fieldset>
+  </form>
+
+  <script type="module">
+    // Stap 1: zoek de input en stop die in een variabele
+    let inputElement = document.querySelector('input');
+    // Stap 2: luister naar het invalid event, en wacht tot dat afgevuurd wordt..
+    inputElement.addEventListener('invalid', function (ev) {
+      // Stap 3: pas de tekst in de validatiemelding aan
+      inputElement.setCustomValidity('Dit veld mag niet leeg zijn hoor..');
+    });
+
+    // Select all radio buttons in the group
+    const radioGroup = document.querySelectorAll('input[type="radio"]');
+
+    // Function to check radio button validity
+    function validateRadioGroup() {
+      let isChecked = false;
+
+      // Loop through radio buttons to check if any is selected
+      for (const radioButton of radioGroup) {
+        if (radioButton.checked) {
+          isChecked = true;
+          radioButton.setCustomValidity(''); // Clear any previous custom validity message
+          break;
+        }
+      }
+
+      // If none are selected, set custom validity message on the first radio button
+      if (!isChecked) {
+        radioGroup[0].setCustomValidity('>:(');
+      }
+    }
+
+    // Add event listener to validate on form submission
+    const form = document.querySelector('.form');
+    form.addEventListener('submit', (event) => {
+      validateRadioGroup(); // Validate radio buttons
+      if (!form.checkValidity()) {
+        event.preventDefault(); // Prevent form submission if invalid
+      }
+    });
+
+  </script>
+</body>
+
+</html>
