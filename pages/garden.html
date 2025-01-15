@@ -13,22 +13,31 @@
     href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
 
-    <style>
-      main {
+  <style>
+    main {
       ul {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: center;
+        align-items: center;
       }
+
+      @media screen and (min-width: 500px) {
+        ul {
+          flex-direction: row;
+        }
+      }
+
 
       li {
         display: inline-block;
-        margin-inline: 1em;
+        margin: 1em;
         border: 1px solid black;
         padding: 1em;
+        max-width: 200px;
       }
     }
-    </style>
+  </style>
 </head>
 
 <body>
@@ -49,6 +58,7 @@
       <li><a href="ux.html">UX</a></li>
       <li><a href="validatie.html">Validatie</a></li>
       <li><a href="https://irisvw.github.io/ui-events">UI Events</a></li>
+    <li><a href="animation.html">Animatie experiment</a></li>
     </ul>
     <img src="../assets/blahaj.gif" alt="A picture of an ikea shark spinning.">
   </main>
