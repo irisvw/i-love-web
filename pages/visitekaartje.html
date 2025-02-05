@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            font-family: "Atkinson Hyperlegible", sans-serif;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
+
+        svg {
+            grid-row: 1 / -1;
+            grid-column: 1 / -1;
+        }
+
+        section {
+            margin: 0 auto;
+            width: 75vh;
+            min-width: 460px;
+            height: 75vh;
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(6, 1fr)
+        }
+
+        p {
+            text-transform: uppercase;
+            font-family: "Atkinson Hyperlegible", sans-serif;
+        }
+
+        p:nth-of-type(1) {
+            grid-row: 3;
+            justify-self: flex-end;
+            align-self: flex-end;
+            font-size: 2vh;
+            font-weight: 500;
+        }
+
+        p:nth-of-type(2) {
+            grid-row: 4;
+            grid-column: 1 / -1;
+            justify-self: center;
+            font-size: 3vh;
+            font-weight: 600;
+            color: transparent;
+            background: coral;
+            background: linear-gradient(in hsl longer hue to right,
+                    coral 0%,
+                    coral 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+        }
+
+        img {
+            grid-row: 2 / 4;
+            grid-column: 2;
+            height: 4em;
+            width: 6em;
+            object-fit: cover;
+            align-self: flex-end;
+            border-radius: 5px;
+            padding-inline: 1em;
+        }
+
+        .text {
+            max-width: 1200px;
+            max-height: 100vh;
+            font-size: .5rem;
+
+            position: absolute;
+            top: 0;
+
+            animation-iteration-count: infinite;
+            animation-name: rotate;
+            animation-duration: 10s;
+            animation-timing-function: linear;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <svg viewBox="0 0 200 200" class="text">
+            <path id="circle" d="
+            M 100, 100
+            m 75, 0
+            a 75,75 0 1,0 -150,0
+            a 75,75 0 1,0  150,0
+            " fill="transparent" />
+            <text width="500">
+                <textPath alignment-baseline="top" xlink:href="#circle">
+                    CSS • JS • HTML • PYTHON • RUBY • UNITY • C#
+                </textPath>
+            </text>
+        </svg>
+
+        <p>Hi, my name is</p>
+        <p>Iris van Willigen</p>
+        <img src="../assets/Squad1G-Iris.jpg" alt="Iris">
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .test {
+            animation-iteration-count: infinite;
+            animation-name: rotate;
+            animation-duration: 5s;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <svg viewBox="0 0 500 500" class="test">
+        <path id="circle" d="
+        M 100, 100
+        m 75, 0
+        a 75,75 0 1,0 -150,0
+        a 75,75 0 1,0  150,0
+        " fill="#0000dd" stroke="#00aaff" />
+        <text width="500">
+            <textPath alignment-baseline="top" xlink:href="#circle">
+                CSS JS HTML PYTHON RUBY UNITY C#
+            </textPath>
+        </text>
+    </svg>
+</body>
+
+</html>

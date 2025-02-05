@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+        }
+
+        .bumper-left,
+        .bumper-right {
+            height: 20em;
+            width: 5em;
+            border-radius: 1em;
+            position: absolute;
+        }
+
+        .bumper-left {
+            --pos-y: 50%;
+            background-color: blue;
+            top: var(--pos-y);
+            left: 0;
+        }
+
+        .bumper-right {
+            background-color: red;
+            top: 50%;
+            right: 0;
+        }
+
+        .ball {
+            --pos-x: 0;
+            --pos-y: 0;
+
+            position: absolute;
+            background-color: green;
+            height: 5em;
+            width: 5em;
+            border-radius: 5em;
+            top: var(--pos-y);
+            left: var(--pos-x);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bumper-left"></div>
+    <div class="bumper-right"></div>
+    <div class="ball"></div>
+
+    <script>
+        const bumperLeft = document.querySelector('.bumper-left');
+        const bumperRight = document.querySelector('.bumper-right');
+        const ball = document.querySelector('.ball');
+
+        let posY = 50;
+        let posX = 0;
+        let velY = 5;
+        let velX = 5;
+
+
+        window.addEventListener('mousemove', (e) => {
+            mouseY = e.clientY + "px";
+            bumperLeft.style.setProperty("--pos-y", mouseY);
+        })
+
+        setInterval(onTimerTick, 33); // 33 milliseconds = ~ 30 frames per sec
+
+        function onTimerTick() {
+            posY = posY + velY;
+            posX = posX + velX;
+            ball.style.setProperty("--pos-y", `${posY}px`);
+            ball.style.setProperty("--pos-x", `${posX}px`);
+            console.log(`${posX}px`);
+        }
+
+    </script>
+</body>
+
+</html>
