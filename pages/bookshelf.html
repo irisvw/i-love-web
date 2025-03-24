@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    body {
+      font-family: sans-serif;
+      font-weight: bold;
+    }
+
+    h1 {
+      margin-bottom: -.3em;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: flex-end;
+      gap: .2em;
+      margin: 0;
+    }
+
+    .book {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: fit-content;
+      height: fit-content;
+      padding: 1em .3em;
+      background-color: lightblue;
+      border-radius: 5px;
+      writing-mode: vertical-lr;
+    }
+
+    .bookshelf {
+      display: block;
+
+      position: relative;
+      width: 500px;
+      height: 20px;
+
+      margin-bottom: 5rem;
+
+
+      .shelf {
+        position: relative;
+        width: 500px;
+        height: 20px;
+        background-color: #E38957;
+        border-radius: 10px;
+        z-index: -1;
+      }
+
+      .support {
+        background-color: #C36B3A;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        border-radius: 100px;
+        z-index: -2;
+
+        &.left {
+          left: 5%;
+          top: 10px;
+          z-index: -2;
+        }
+
+        &.right {
+          right: 5%;
+          top: 10px;
+        }
+      }
+    }
+
+
+  </style>
+</head>
+
+<body>
+  <h1>SQUAD 1G</h1>
+  <div class="bookshelf">
+    <div class="shelf"></div>
+    <div class="support left"></div>
+    <div class="support right"></div>
+  </div>
+  
+  
+  <ul>
+    <li class="book">Akiko</li>
+    <li class="book">Amber</li>
+    <li class="book">Athene</li>
+    <li class="book">Branco</li>
+  </ul>
+
+  <div class="bookshelf">
+    <div class="shelf"></div>
+    <div class="support left"></div>
+    <div class="support right"></div>
+  </div>
+
+  <ul>
+    <li class="book">Akiko</li>
+    <li class="book">Amber</li>
+    <li class="book">Athene</li>
+    <li class="book">Branco</li>
+  </ul>
+
+  <div class="bookshelf">
+    <div class="shelf"></div>
+    <div class="support left"></div>
+    <div class="support right"></div>
+  </div>
+</body>
+
+</html>

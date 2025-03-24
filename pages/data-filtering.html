@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <details>
+    <summary>
+      Experiment 1:
+    </summary>
+    <p>https://fdnd.directus.app/items/person/?sort=name</p>
+  </details>
+  <details>
+    <summary>
+      Experiment 2:
+    </summary>
+    <p>https://fdnd.directus.app/items/person/?fields=name&filter[name][_istarts_with]=d</p>
+  </details>
+  <details>
+    <summary>
+      Experiment 3:
+    </summary>
+    <p>
+      https://fdnd.directus.app/items/person/?fields=name&filter={"_or":[{"name":{"_istarts_with":"d"}},{"name":{"_istarts_with":"k"}}]}
+      https://fdnd.directus.app/items/person/?fields=name&filter[_or][0][name][_istarts_with]=d&filter[_or][1][name][_istarts_with]=k
+    </p>
+  </details>
+  <details>
+    <summary>
+      Experiment 4:
+    </summary>
+    <p>https://fdnd.directus.app/items/person/?fields=name,birthdate&filter[birthdate][_neq]=null</p>
+  </details>
+  <details>
+    <summary>
+      Experiment 5:
+    </summary>
+    <p>https://fdnd.directus.app/items/person/?fields=name,birthdate&filter[year(birthdate)][_eq]=2002</p>
+  </details>
+  <details>
+    <summary>
+      Experiment 6:
+    </summary>
+    <p>https://fdnd.directus.app/items/person/?fields=fav_tag&filter[fav_tag][_neq]=null&groupBy[]=fav_tag&aggregate[count]=*&sort=-count</p>
+  </details>
+</body>
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url("https://codepen.io/shooft/pen/GRPQwvz.css");
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        li {
+            /* // tekst in het midden van de li */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 1em;
+        }
+
+
+
+
+
+        /************************/
+        /* JOUW CODE VANAF HIER */
+
+
+        /**********************/
+        /* rgb zonder komma's */
+        /**********************/
+
+        li[aria-label="rgb zonder komma's"] {
+            /* // JOUW CODE HIER	 */
+            background-color: #00FFFF;
+        }
+
+
+
+        /*****************/
+        /* rgb met alpha */
+        /*****************/
+
+        li[aria-label="rgb met alpha"] {
+            /* // JOUW CODE HIER */
+            background-color: #00FF0088;
+        }
+
+
+
+        /**************/
+        /* display-p3 */
+        /**************/
+
+        li[aria-label="display-p3"] {
+            /* // JOUW CODE HIER */
+            background-color: color(display-p3 0 1 1);
+        }
+
+
+
+        /************************/
+        /* display-p3 met alpha */
+        /************************/
+
+        li[aria-label="display-p3 met alpha"] {
+            /* // JOUW CODE HIER */
+            background-color: color(display-p3 0 1 0 / 0.5);
+
+        }
+
+
+
+        /**********************************************/
+        /* display-p3 als enhancement (met @supports) */
+        /**********************************************/
+
+        li[aria-label="display-p3 als enhancement"] {
+            /* // JOUW CODE HIER
+            // 1. eerst rgb */
+            background-color: #FF0;
+
+            /* // 2. dan in @supports display-p3 */
+            @supports (background-color: color(display-p3 1 1 0)) {
+                background-color: color(display-p3 1 1 0);
+            }
+
+        }
+
+
+
+        /****************************************/
+        /* rec2020 als enhancement (mey @media) */
+        /****************************************/
+
+        /* // die enhancement werkt helaas nog niet als het goed is */
+
+        li[aria-label="rec2020 als enhancement"] {
+            /* // JOUW CODE HIER
+            // 1. eerst rgb */
+            background-color: #FF00FF;
+
+            /* // 2. dan in @supports display-p3 */
+            @supports (background-color: color(rec2020 0 0 0)) {
+                background-color: color(rec2020 1 0 1);
+            }
+
+        }
+
+
+
+        /*******************/
+        /* linear in oklch */
+        /*******************/
+
+        /* // "in oklch" in gradients werkt nog niet in firefox */
+
+        li[aria-label="linear in oklch"] {
+            /* // JOUW CODE HIER
+            // 1. dus starten met een normale gradient */
+            background-image: linear-gradient(90deg,
+                    gold,
+                    deeppink);
+
+            /* // 2. en dan met @supports de "in oklch" gradient toepassen */
+            @supports (color: oklch(0 0 0)) {
+                background-image: linear-gradient(90deg in oklch,
+                        gold,
+                        deeppink);
+            }
+        }
+
+
+
+        /******************/
+        /* conic in oklch */
+        /******************/
+
+        /* // "in oklch" in gradients werkt nog niet in firefox */
+
+        li[aria-label="conic in oklch"] {
+            /* // JOUW CODE HIER
+            // 1. dus starten met een normale gradient */
+            background-image: conic-gradient(gold,
+                    deeppink,
+                    dodgerblue,
+                    gold);
+
+            /* // 2. en dan met @supports de "in oklch" gradient toepassen */
+            @supports (color: oklch(0 0 0)) {
+                background-image: conic-gradient(in oklch,
+                        gold,
+                        deeppink,
+                        dodgerblue,
+                        gold);
+            }
+
+        }
+
+
+
+        /**************************/
+        /* rainbow met longer hue */
+        /**************************/
+
+        /* // "in oklch" in gradients werkt nog niet in firefox */
+
+        li[aria-label="rainbow met longer hue"] {
+            background-image: conic-gradient(in hsl longer hue,
+                    gold,
+                    gold);
+
+            @supports (color:oklch(0 0 0)) {
+                background-image: conic-gradient(in oklch longer hue,
+                        gold,
+                        gold);
+            }
+        }
+
+
+
+
+
+        /**************************/
+        /* rainbow met longer hue */
+        /**************************/
+
+        /* // "in hsl" in gradients werkt nog niet in firefox */
+
+        li[aria-label="rainbow met longer hue in hsl"] {
+            /* // JOUW CODE HIER
+            // 1. dus starten met een normale gradient */
+            background-image: linear-gradient(red,
+                    gold);
+
+            /* // 2. en dan met @supports de "in oklch" gradient toepassen */
+            @supports (color:hsl(0 0 0)) {
+                background-image: conic-gradient(in hsl longer hue,
+                        gold,
+                        gold);
+            }
+
+        }
+
+
+
+        /*************/
+        /* color-mix */
+        /*************/
+
+        li[aria-label="color-mix"] {
+            /* // JOUW CODE HIER */
+            background-color: color-mix(in oklch, dodgerblue 50%, lime);
+        }
+
+
+
+        /****************/
+        /* color-mix-55 */
+        /****************/
+
+        li[aria-label="color-mix-55"] {
+            /* // JOUW CODE HIER */
+            background-color: color-mix(in oklch, dodgerblue 45%, lime);
+
+        }
+
+
+
+        /****************/
+        /* color-mix-60 */
+        /****************/
+
+        li[aria-label="color-mix-60"] {
+            /* // JOUW CODE HIER */
+            background-color: color-mix(in oklch, dodgerblue 40%, lime);
+
+        }
+
+
+
+        /****************/
+        /* color-mix-65 */
+        /****************/
+
+        li[aria-label="color-mix-65"] {
+            /* // JOUW CODE HIER */
+            background-color: color-mix(in oklch, dodgerblue 35%, lime);
+
+        }
+
+
+
+        /****************/
+        /* color-mix-70 */
+        /****************/
+
+        li[aria-label="color-mix-70"] {
+            /* // JOUW CODE HIER */
+            background-color: color-mix(in oklch, dodgerblue 30%, lime);
+
+        }
+
+
+
+        /****************/
+        /* color-mix-75 */
+        /****************/
+
+        li[aria-label="color-mix-75"] {
+            /* // JOUW CODE HIER */
+            background-color: color-mix(in oklch, dodgerblue 25%, lime);
+
+        }
+
+
+
+        /******************/
+        /* twee gradients */
+        /******************/
+
+        /* // "in oklch" in gradients werkt nog niet in firefox */
+
+
+
+        li[aria-label="twee gradients"] {
+            /* // JOUW CODE HIER
+            // 1. dus starten met twee normale gradients (-45deg en 45deg) */
+            background-image:
+                repeating-linear-gradient(-45deg,
+                    #f09,
+                    transparent 50px),
+                repeating-linear-gradient(45deg,
+                    #90f,
+                    transparent 50px);
+
+            /* // 2. en dan met @supports de "in oklch" gradients toepassen */
+            @supports (color: oklch(0 0 0 0)) {
+                background-image:
+                    repeating-linear-gradient(-45deg in oklch,
+                        #f09,
+                        transparent 50px),
+                    repeating-linear-gradient(45deg in oklch,
+                        #90f,
+                        transparent 50px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+
+</html>
