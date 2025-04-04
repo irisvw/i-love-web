@@ -1,0 +1,22 @@
+{
+  "name": "i-love-web",
+  "version": "2.0.0",
+  "description": "Learning journal, blog, digital gardening",
+  "main": "server.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/irisvw/i-love-web.git"
+  },
+  "author": "Iris van Willigen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/irisvw/i-love-web/issues"
+  },
+  "homepage": "https://github.com/irisvw/i-love-web#readme"
+}
