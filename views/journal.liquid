@@ -1,0 +1,20 @@
+{% render 'partials/head.liquid' %}
+
+<header>
+  <h1>I ❤️ WEB(DEV)</h1>
+  {% render 'partials/nav.liquid' %}
+</header>
+
+<h2>Mijn artikelen</h2>
+<section>
+  <div class="container">
+    <ul>
+      {% assign files_by_date = files | sort | reverse %}
+      {% for file in files_by_date %}
+        <li>
+          <a href="/learning-journal/{{ file | slice: 0, -3 }}">{{ file | slice: 0, -3 }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

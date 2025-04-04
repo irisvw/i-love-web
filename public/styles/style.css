@@ -10,8 +10,8 @@
 }
 
 body {
-  height: 100vh;
-  max-height: 100vh;
+  height: 100dvh;
+  max-height: 100dvh;
   background: rgb(205, 228, 255);
   background: linear-gradient(0deg, rgba(205, 228, 255, 1) 0%, rgba(255, 218, 234, 1) 100%);
 
@@ -62,6 +62,10 @@ section {
 
   li {
     list-style-type: "♥ "
+  }
+
+  li:first-of-type {
+    margin-top: 1lh;
   }
 
   h3 {
