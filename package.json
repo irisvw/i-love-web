@@ -3,6 +3,7 @@
   "version": "2.0.0",
   "description": "Learning journal, blog, digital gardening",
   "main": "server.js",
+  "type": "module",
   "directories": {
     "doc": "docs"
   },
@@ -18,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/irisvw/i-love-web/issues"
   },
-  "homepage": "https://github.com/irisvw/i-love-web#readme"
+  "homepage": "https://github.com/irisvw/i-love-web#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
 }
