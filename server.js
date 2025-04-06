@@ -1,6 +1,7 @@
 import express from 'express';
 import { Liquid } from 'liquidjs';
 import { readdir, readFile } from 'node:fs/promises';
+import { marked } from 'marked';
 
 const app = express();
 const engine = new Liquid();
@@ -29,7 +30,8 @@ app.get('/learning-journal', async function (req, res) {
 app.get('/learning-journal/:slug', async function (req, res) {
     let file = req.params.slug;
     const fileContents = await readFile('content/' + file + '.md', { encoding: 'utf8' });
-    res.render('article.liquid', { fileContents: fileContents });
+    const MDFileContents = marked.parse(fileContents);
+    res.render('article.liquid', { fileContents: MDFileContents });
 })
 
 app.listen(app.get('port'), function () {
