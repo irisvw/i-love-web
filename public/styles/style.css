@@ -4,14 +4,11 @@
 }
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  height: 100dvh;
-  max-height: 100dvh;
+  min-height: 100dvh;
   background: rgb(205, 228, 255);
   background: linear-gradient(0deg, rgba(205, 228, 255, 1) 0%, rgba(255, 218, 234, 1) 100%);
 
@@ -28,10 +25,12 @@ header, h2 {
   margin-bottom: 1rem;
 }
 
-a {
-  color: black;
-  text-decoration: none;
+h1 {
+  width: max-content;
+  margin: .1em auto;
+}
 
+a {
   &:hover {
     text-decoration: underline;
   }
