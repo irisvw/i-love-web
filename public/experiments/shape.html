@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shape</title>
+</head>
+
+<style>
+    .cloud {
+        background-color: purple;
+        height: 250px;
+        width: 500px;
+        --wave-height: 40px;
+        clip-path: shape(from 0% 100%,
+                curve to 33% 60% with 10% 40%,
+                curve to 70% 70% with 55% 20%,
+                curve to 100% 100% with 85% 50%,
+                hline to 0%,
+                close)
+    }
+</style>
+
+<body>
+    <div class="cloud"></div>
+</body>
+
+</html>
