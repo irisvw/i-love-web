@@ -13,6 +13,7 @@ body {
   background: linear-gradient(0deg, rgba(205, 228, 255, 1) 0%, rgba(255, 218, 234, 1) 100%);
 
   font-family: sans-serif;
+  font-size: 1rem;
 
   display: flex;
   flex-direction: column;
@@ -32,16 +33,29 @@ h1 {
 }
 
 a {
+  font-family: sans-serif;
+
   &:hover {
     text-decoration: underline;
+  }
+
+  &:visited {
+    color: blue;
   }
 }
 
 nav {
   ul {
     display: inline-flex;
+    margin: 0.5rem 0;
+    padding: 0;
     list-style: none;
     gap: 1rem;
+  }
+
+  ul li a {
+    font-family: monospace;
+    padding: 1rem 0;
   }
 }
 
@@ -49,7 +63,60 @@ h2 {
   text-align: center;
 }
 
-section {
+footer {
+  width: 100%;
+  border-top: 1px solid black;
+}
+
+main.blog {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.blog-title {
+  display: flex;
+  justify-content: space-between;
+  font-family: monospace;
+
+  a {
+    font-family: sans-serif;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-right: 1em;
+  }
+}
+
+section.list-overview {
+  padding: .5rem;
+  margin: .5rem 0;
+  background-color: white;
+
+  h2 {
+    margin: 0;
+    padding: .5rem;
+  }
+
+  a {
+    text-decoration: none;
+    line-height: 1.5;
+  }
+
+  ul {
+    padding: 0;
+    list-style: none;
+  }
+
+  ul li:first-of-type {
+    border-top: 1px solid black;
+  }
+
+  ul li {
+    border-bottom: 1px solid black;
+  }
+}
+
+section.notebook-page {
   min-height: 500px;
   max-height: 700px;
   width: clamp(300px, 90vw, 900px);
@@ -147,9 +214,9 @@ code {
   max-width: 200px;
   margin: 1lh;
   background: linear-gradient(red 16%,
-    orange 16% 32%,
-    yellow 32% 48%,
-    green 48% 64%,
-    blue 64% 80%,
+      orange 16% 32%,
+      yellow 32% 48%,
+      green 48% 64%,
+      blue 64% 80%,
       purple 80%);
 }
