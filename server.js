@@ -2,6 +2,7 @@ import express from 'express';
 import { Liquid } from 'liquidjs';
 import { readdir, readFile } from 'node:fs/promises';
 import { marked } from 'marked';
+import matter from 'gray-matter';
 
 const app = express();
 const engine = new Liquid();
