@@ -3,4 +3,12 @@
 <header>
   <h1>I ❤️ WEB(DEV)</h1>
   {% render 'partials/nav.liquid' %}
+
+  <ul>
+    {% for experiment in experiments %}
+      <li>
+        <a href="/digital-garden/{{ experiment }}">{{ experiment | slice: 0, -5 }}</a>
+      </li>
+    {% endfor %}
+  </ul>
 </header>

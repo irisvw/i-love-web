@@ -21,7 +21,12 @@ app.get('/', async function (req, res) {
 });
 
 app.get('/digital-garden', async function (req, res) {
-    res.render('garden.liquid');
+    res.render('garden.liquid', { experiments: experiments });
+})
+
+app.get('/digital-garden/:slug', async function (req, res) {
+    const filePath = path.join(process.cwd(), 'public', 'experiments', req.params.slug);
+    res.sendFile(filePath);
 })
 
 app.get('/learning-journal', async function (req, res) {
