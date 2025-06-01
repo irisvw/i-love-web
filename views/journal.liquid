@@ -12,7 +12,7 @@
     {% for file in files_by_date %}
       <li class="blog-title">
         <a href="/learning-journal/{{ file.data.date | date: '%Y-%m-%d' }}">{{ file.data.title }}</a>
-        {{ file.data.date | date: '%Y-%m-%d' }}
+        <span>{{ file.data.date | date: '%Y-%m-%d' }}</span>
       </li>
     {% endfor %}
   </div>

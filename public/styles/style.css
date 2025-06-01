@@ -137,7 +137,7 @@ section.notebook-page {
 
   font-family: handwriting, sans-serif;
   line-height: 30px;
-  font-size: 22px;
+  font-size: 1rem;
 
   li {
     list-style-type: "♥ "
@@ -163,7 +163,7 @@ section.notebook-page {
     display: grid;
     padding: 1rem;
     margin: 1rem 0;
-    width: 25rem;
+    width: 35rem;
     max-width: 90vw;
     background-color: white;
     grid-template-columns: 1fr;
@@ -197,6 +197,7 @@ section.notebook-page {
       grid-area: description;
       overflow: hidden;
       word-break: break-word;
+      width: 100%;
     }
   }
 }
