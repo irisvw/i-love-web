@@ -5,5 +5,7 @@
   {% render 'partials/nav.liquid' %}
 </header>
 
-<h2>{{ title }}</h2>
-{{ fileContents }}
+<main class="blog">
+  <h2>{{ fileContents.data.title }}</h2>
+  {{ fileContents.content }}
+</main>

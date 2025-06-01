@@ -6,15 +6,14 @@
 </header>
 
 <h2>Mijn artikelen</h2>
-<section>
+<section class="notebook-page">
   <div class="container">
-    <ul>
-      {% assign files_by_date = files | sort | reverse %}
-      {% for file in files_by_date %}
-        <li>
-          <a href="/learning-journal/{{ file | slice: 0, -3 }}">{{ file | slice: 0, -3 }}</a>
-        </li>
-      {% endfor %}
-    </ul>
+    {% assign files_by_date = files | sort: "data.date" | reverse %}
+    {% for file in files_by_date %}
+      <li class="blog-title">
+        <a href="/learning-journal/{{ file.data.date | date: '%Y-%m-%d' }}">{{ file.data.title }}</a>
+        {{ file.data.date | date: '%Y-%m-%d' }}
+      </li>
+    {% endfor %}
   </div>
 </section>
