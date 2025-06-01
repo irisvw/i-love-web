@@ -91,6 +91,11 @@ main.blog {
     white-space: nowrap;
     text-overflow: ellipsis;
     margin-right: 1em;
+    width: clamp(15ch, 50vw, 60ch);
+  }
+
+  span {
+    min-width: max-content;
   }
 }
 
