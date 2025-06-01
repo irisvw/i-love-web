@@ -20,7 +20,8 @@ body {
   gap: 1rem;
 }
 
-header, h2 {
+header,
+h2 {
   font-family: "Courier Prime", monospace;
   margin-bottom: 1rem;
 }
@@ -132,7 +133,7 @@ section {
   min-height: 500px;
 }
 
-section > img {
+section>img {
   max-height: 15rem;
   float: right;
 }
@@ -145,12 +146,10 @@ code {
   min-height: 100px;
   max-width: 200px;
   margin: 1lh;
-  background: linear-gradient(
-    red 16%,
+  background: linear-gradient(red 16%,
     orange 16% 32%,
     yellow 32% 48%,
     green 48% 64%,
     blue 64% 80%,
-    purple 80%
-  );
+      purple 80%);
 }
