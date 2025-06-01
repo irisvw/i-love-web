@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes bounce {
+            from {
+                translate: 0px 0px;
+            }
+
+            to {
+                translate: 0px 25px;
+            }
+        }
+
+        div {
+            animation: .5s cubic-bezier(.79, .06, .93, .39) alternate infinite bounce;
+            height: 50px;
+            width: 50px;
+            border-radius: 100%;
+            background-color: rebeccapurple;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

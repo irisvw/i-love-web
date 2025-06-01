@@ -18,7 +18,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
 }
 
 header,
@@ -30,6 +29,13 @@ h2 {
 h1 {
   width: max-content;
   margin: .1em auto;
+}
+
+p {
+    width: 60ch;
+    max-width: 100%;
+    margin: .5rem 0;
+    line-height: 1.5;
 }
 
 a {
@@ -61,6 +67,7 @@ nav {
 
 h2 {
   text-align: center;
+  max-width: 40ch;
 }
 
 footer {

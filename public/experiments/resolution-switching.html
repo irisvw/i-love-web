@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(75, 75, 75);
+        }
+        img {
+            width: 90vw;
+            height: 90vh;
+            object-fit: cover;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <picture>
+        <source media="(orientation: portrait)" type="image/webp" srcset="https://picsum.photos/id/275/1250/2050.webp">
+        <source media="(min-width: 600px)" type="image/webp" srcset="https://picsum.photos/id/275/2000/1250.webp">
+        <source media="(min-width: 1200px)" type="image/webp" srcset="https://picsum.photos/id/275/4000/2500.webp">
+        <img src="https://picsum.photos/id/275/1000/625.jpg" srcset="https://picsum.photos/id/275/2000/1250.jpg 2x" alt="Plaatje" width="400" height="300" decoding="async">
+      </picture>
+</body>
+</html>

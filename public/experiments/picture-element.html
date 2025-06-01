@@ -4,11 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        p {
+            font-family: sans-serif;
+            max-width: 75ch;
+        }
+    </style>
 </head>
 <body>
     <picture>
         <source type="image/webp" srcset="https://picsum.photos/400/300.webp">
         <img src="https://picsum.photos/400/300.jpg" alt="Plaatje" width="400" height="300" decoding="async">
-      </picture>
+    </picture>
+    <p>In de meest recente versie van Chrome wordt enkel de WebP versie opgehaald.</p>
+    <p>Ik heb deze pagina ook getest in Browserstack. De enige browser die WebP niet ondersteunt is Internet Explorer. 
+        Die kreeg het uberhaupt niet voor elkaar om de afbeelding weer te geven.</p>
 </body>
 </html>
