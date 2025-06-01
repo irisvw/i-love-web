@@ -6,69 +6,63 @@
 </header>
 
 <main>
-  <h2>Learning Log</h2>
-  <section>
-    <div class="container">
-      <h3>October</h3>
-      <ul>
-        <li>
-          <a href="pages/2024-10-23.html">23 october</a>
+  <section class="list-overview">
+    <h2>Learning Journal</h2>
+    <ul>
+      {% assign files_by_date = files | sort: "data.date" | reverse %}
+      {% for file in files_by_date limit: 5 %}
+        <li class="blog-title">
+          <a href="/learning-journal/{{ file.data.date | date: '%Y-%m-%d' }}">{{ file.data.title }}</a>
+          {{ file.data.date | date: '%Y-%m-%d' }}
         </li>
+      {% endfor %}
+      <li>
+        <a href="/learning-journal">View all</a>
+      </li>
+    </ul>
+  </section>
+
+  <section class="list-overview">
+    <h2>Experiments</h2>
+    <ul>
+      {% for experiment in experiments limit: 5 %}
         <li>
-          <a href="pages/2024-10-21.html">21 october</a>
+          <a href="/digital-garden/{{ experiment }}">{{ experiment | slice: 0, -5 }}</a>
         </li>
-        <li>
-          <a href="pages/2024-10-18.html">18 october</a>
-        </li>
-        <li>
-          <a href="pages/2024-10-16.html">16 october</a>
-        </li>
-        <li>
-          <a href="pages/2024-10-15.html">15 october</a>
-        </li>
-        <li>
-          <a href="pages/2024-10-14.html">14 october</a>
-        </li>
-        <li>
-          <a href="pages/2024-10-09.html">09 october</a>
-        </li>
-        <li>
-          <a href="pages/2024-10-08.html">08 october</a>
-        </li>
-        <li>
-          <a href="pages/2024-10-07.html">07 october</a>
-        </li>
-        <li>
-          <a href="pages/2024-10-04.html">04 october</a>
-        </li>
-        <li>
-          <a href="pages/2024-10-02.html">02 october</a>
-        </li>
-        <li>
-          <a href="pages/2024-10-01.html">01 october</a>
-        </li>
-      </ul>
-      <h3>September</h3>
-      <ul>
-        <li><a href="pages/2024-09-30.html">30 september</a></li>
-        <li><a href="pages/2024-09-27.html">27 september</a></li>
-        <li><a href="pages/2024-09-23.html">23 september</a></li>
-        <li><a href="pages/2024-09-18.html">18 september</a></li>
-        <li><a href="pages/2024-09-17.html">17 september</a></li>
-        <li><a href="pages/2024-09-13.html">13 september</a></li>
-        <li><a href="pages/2024-09-12.html">12 september</a></li>
-        <li><a href="pages/2024-09-11.html">11 september</a></li>
-        <li><a href="pages/2024-09-10.html">10 september</a></li>
-        <li><a href="pages/2024-09-09.html">9 september</a></li>
-        <li><a href="pages/2024-09-08.html">8 september</a></li>
-        <li><a href="pages/2024-09-07.html">7 september</a></li>
-        <li><a href="pages/2024-09-06.html">6 september</a></li>
-        <li><a href="pages/2024-09-05.html">5 september</a></li>
-        <li><a href="pages/2024-09-04.html">4 september</a></li>
-        <li><a href="pages/2024-09-03.html">3 september</a></li>
-      </ul>
-    </div>
+      {% endfor %}
+      <li>
+        <a href="/digital-garden">View all</a>
+      </li>
+    </ul>
+  </section>
+
+  <section class="list-overview">
+    <h2>Projects</h2>
+    <ul>
+      <li><a href="https://user-experience-enhanced-website-tumi.onrender.com/">TuMi Mundo</a></li>
+      <li><a href="https://connect-your-tribe-team-squad-page-apxc.onrender.com/">Squad Page 1G</a></li>
+      <li><a href="https://irisvw.github.io/the-startup-responsive-interactive-website/">ABN AMRO</a></li>
+      <li><a href="https://irisvw.github.io/look-and-feel-corporate-identity/">Qatar Museums</a></li>
+      <li><a href="https://irisvw.github.io/etch-a-sketch/">Etch-a-sketch</a></li>
+      <li><a href="/projects">View all</a></li>
+    </ul>
   </section>
 </main>
 
-<footer></footer></body></html>
+<footer>
+  <p>Connect with me or view my work on:</p>
+  <ul>
+    <li>
+      <a href="https://github.com/irisvw/">Github</a>
+    </li>
+    <li>
+      <a href="https://www.linkedin.com/in/iris-van-willigen-678463292/">LinkedIn</a>
+    </li>
+    <li>
+      <a href="https://www.instagram.com/yellowish_iris/">Instagram</a>
+    </li>
+  </ul>
+
+  <p>Made by Iris van Willigen</p>
+  <a href="#">Back to top</a>
+</footer></body></html>
