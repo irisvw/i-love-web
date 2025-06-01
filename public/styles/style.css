@@ -74,8 +74,51 @@ section {
   h4 {
     margin-top: 1lh;
   }
+}
 
+.projects {
+  padding: 0;
 
+  li {
+    display: grid;
+    padding: 1rem;
+    margin: 1rem 0;
+    width: 25rem;
+    max-width: 90vw;
+    background-color: white;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "image" "title" "description";
+    gap: 1rem;
+
+    @media (width > 400px) {
+      grid-template-columns: min-content 1fr;
+      grid-template-rows: 1rem 9rem;
+      grid-template-areas: "image title" "image description";
+      gap: 0 1rem;
+    }
+
+    img {
+      grid-area: image;
+      height: 10rem;
+      width: 100%;
+      object-fit: cover;
+
+      @media (width > 400px) {
+        width: 10rem;
+      }
+    }
+
+    h3 {
+      grid-area: title;
+    }
+
+    p {
+      grid-area: description;
+      overflow: hidden;
+      word-break: break-word;
+    }
+  }
 }
 
 .visible-link {
