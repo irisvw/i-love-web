@@ -3,6 +3,7 @@ import { Liquid } from 'liquidjs';
 import { readdir, readFile } from 'node:fs/promises';
 import { marked } from 'marked';
 import matter from 'gray-matter';
+import path from 'path';    
 
 const app = express();
 const engine = new Liquid();
@@ -15,9 +16,24 @@ app.set('port', process.env.PORT || 8000);
 app.set('views', './views');
 
 const files = await readdir('content');
+const fileInfo = setup(files);
+
+async function setup(files) {
+    let fileArray = [];
+
+    files.forEach(async (file) => {
+        let fileContents = await readFile('content/' + file, { encoding: 'utf8' });
+        let fileMatter = matter(fileContents);
+        fileArray.push(fileMatter);
+    });
+
+    return fileArray;
+}
+
+const experiments = await readdir('public/experiments');
 
 app.get('/', async function (req, res) {
-    res.render('index.liquid');
+    res.render('index.liquid', { files: fileInfo, experiments: experiments });
 });
 
 app.get('/digital-garden', async function (req, res) {
@@ -30,12 +46,17 @@ app.get('/digital-garden/:slug', async function (req, res) {
 })
 
 app.get('/learning-journal', async function (req, res) {
-    res.render('journal.liquid', { files: files });
+    res.render('journal.liquid', { files: fileInfo });
 })
 
 app.get('/learning-journal/:slug', async function (req, res) {
     let file = req.params.slug;
     const fileContents = await readFile('content/' + file + '.md', { encoding: 'utf8' });
+    const fileMatter = matter(fileContents);
+    fileMatter.content = marked.parse(fileMatter.content);
+    res.render('article.liquid', { fileContents: fileMatter });
+})
+
 app.get('/projects', async function (req, res) {
     res.render('projects.liquid');
 })
