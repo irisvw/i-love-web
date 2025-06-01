@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100 dvh;
+        background: linear-gradient(#AFE8EE, #FFBC82);
+        font-family: sans-serif;
+      }
+
+      h1 {
+        padding: 1rem;
+        font-size: clamp(2rem, 10vw, 3rem);
+      }
+
+      section {
+        position: relative;
+        margin: 1rem;
+        padding: 0.5rem;
+        border-radius: 1rem;
+        background-color: pink;
+        width: max-content;
+        box-shadow: rgba(60, 64, 67, 0.3) 0 1px 2px 0
+        , rgba(60, 64, 67, 0.15) 0 2px 6px 2px;
+
+        h2 {
+          width: 100%;
+          background-color: white;
+          border-radius: 1rem;
+          padding: 0.5rem 2rem;
+        }
+
+        ul {
+          list-style: none;
+          padding: 1rem;
+        }
+      }
+      section:nth-of-type(1) {
+        background-color: white;
+      }
+
+      @media (width > 500px) {
+        section:nth-of-type(1) {
+          top: 40vh;
+          z-index: 1;
+          left: 10vw;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <section>
+      <h1>Iris van Willigen</h1>
+    </section>
+    <section>
+      <h2>Projects</h2>
+      <ul>
+        <li><a href="">LinkedIn</a></li>
+        <li><a href="">Instagram</a></li>
+        <li><a href="">Github</a></li>
+      </ul>
+    </section>
+    <section>
+      <h2>Blog</h2>
+      <ul>
+        <li><a href="">LinkedIn</a></li>
+        <li><a href="">Instagram</a></li>
+        <li><a href="">Github</a></li>
+        <li><a href="">Instagram</a></li>
+        <li><a href="">Github</a></li>
+      </ul>
+    </section>
+    <section>
+      <h2>Socials</h2>
+      <ul>
+        <li><a href="">LinkedIn</a></li>
+        <li><a href="">Instagram</a></li>
+        <li><a href="">Github</a></li>
+      </ul>
+    </section>
+    <section>
+      <h2>Experiments</h2>
+      <ul>
+        <li><a href="">LinkedIn</a></li>
+        <li><a href="">Instagram</a></li>
+        <li><a href="">Github</a></li>
+      </ul>
+    </section>
+
+    <script></script>
+  </body>
+
+</html>

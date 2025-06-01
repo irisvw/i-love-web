@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: sans-serif;
+        }
+
+        header {
+            height: 20dvh;
+            background-color: rebeccapurple;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        section:nth-child(1) header {
+            mask: linear-gradient(rgb(0 0 0 / 100%), transparent);
+        }
+
+        section:nth-child(2) header {
+            mask: radial-gradient(34.99px at 50% calc(100% - 48px), #000 99%, #0000 101%) calc(50% - 60px) 0/120px 100%,
+                radial-gradient(34.99px at 50% calc(100% + 18px), #0000 99%, #000 101%) 50% calc(100% - 30px)/120px 100% repeat-x;
+        }
+
+        section:nth-child(3) header {
+            mask: conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) 50%/60px 100%;
+        }
+
+        section:nth-child(4) header {
+            mask:
+                linear-gradient(0, #0000 30px, #000 0),
+                radial-gradient(30px, #000 calc(100% - 1px), #0000) bottom/55.5px 60px
+        }
+
+        section:nth-child(5) header {
+            mask-image: conic-gradient(from -45deg at center bottom, rgba(0, 0, 0, 0), rgb(0, 0, 0) 1deg, rgb(0, 0, 0) 89deg, rgba(0, 0, 0, 0) 90deg);
+            mask-position: 50%;
+            mask-size: 60px 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <header>
+            <h2>Iris van Willigen</h1>
+        </header>
+        1 https://css-generators.com/
+    </section>
+
+    <section>
+        <header>
+            <h2>Iris van Willigen</h1>
+        </header>
+        2 https://css-generators.com/
+    </section>
+
+    <section>
+        <header>
+            <h2>Iris van Willigen</h1>
+        </header>
+        3 https://css-generators.com/
+    </section>
+
+    <section>
+        <header>
+            <h2>Iris van Willigen</h1>
+        </header>
+        4 https://css-generators.com/
+    </section>
+
+    <section>
+        <header>
+            <h2>Iris van Willigen</h1>
+        </header>
+        5 https://css-generators.com/
+    </section>
+</body>
+
+</html>
