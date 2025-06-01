@@ -31,8 +31,8 @@ app.get('/learning-journal', async function (req, res) {
 app.get('/learning-journal/:slug', async function (req, res) {
     let file = req.params.slug;
     const fileContents = await readFile('content/' + file + '.md', { encoding: 'utf8' });
-    const MDFileContents = marked.parse(fileContents);
-    res.render('article.liquid', { fileContents: MDFileContents });
+app.get('/projects', async function (req, res) {
+    res.render('projects.liquid');
 })
 
 app.listen(app.get('port'), function () {
